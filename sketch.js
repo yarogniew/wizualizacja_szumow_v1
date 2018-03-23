@@ -27,7 +27,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   angleMode(DEGREES);
   background(50);
-  button = createButton('stop/play');
+  button = createButton('pause/play');
   button.mousePressed(toggleSong);
   song.play();
   amp = new p5.Amplitude();
