@@ -19,7 +19,7 @@ function toggleSong() {
 }
 
 function preload() {
-  song = loadSound('Potrzeby.mp3');
+  song = loadSound('szumy.mp3');
 }
 
 function setup() {
@@ -41,14 +41,14 @@ function draw() {
 
 
 
-  fill(s+50, s+100);
+  fill(s+50, 200, 100,  s+100);
   strokeWeight(20);
   stroke(s, s-100);
   //bezier(85, 20, 10, 10, 90, 90, 15, 80);
 
   translate(width / 2, height / 2);
   beginShape();
-  for (var i = 0; i < 380; i+=13) {
+  for (var i = 0; i < 380; i+=7) {
     var r = map(volhistory[i], 0, 1, 0, sizeOfBird*vol*7);
     var x = r * cos(i);
     var y = r * sin(i);
