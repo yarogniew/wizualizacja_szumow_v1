@@ -8,10 +8,11 @@ var amp;
 var button;
 var sizeOfBird = 400;
 var volhistory = [];
+var j;
 
 function toggleSong() {
   if (song.isPlaying()) {
-    song.stop();
+    song.pause();
           background(50);
   } else {
     song.play();
@@ -40,8 +41,8 @@ function draw() {
         //background(255-s);
 
 
-
-  fill(s+50, 200, 100,  s+100);
+j = random(30,50);
+  fill(s+50, j, 100,  s+100);
   strokeWeight(20);
   stroke(s, s-100);
   //bezier(85, 20, 10, 10, 90, 90, 15, 80);
