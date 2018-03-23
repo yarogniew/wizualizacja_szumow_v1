@@ -8,7 +8,9 @@ var amp;
 var button;
 var sizeOfBird = 400;
 var volhistory = [];
-var j;
+var j, n;
+var xoff = 0.05;
+
 
 function toggleSong() {
   if (song.isPlaying()) {
@@ -25,28 +27,30 @@ function preload() {
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  sizeOfBird = windowWidth - 200;
   angleMode(DEGREES);
   background(50);
   button = createButton('pause/play');
   button.mousePressed(toggleSong);
   button.position(20, 20);
+  //button.size(200);
   song.play();
   amp = new p5.Amplitude();
 }
 
 function draw() {
-
+  n = noise(xoff)*2;
   var vol = amp.getLevel();
   volhistory.push(vol);
       var s = map(vol, 0, 0.5, 0, 255);
         //background(255-s);
 
 
-j = random(0,40);
+  j = random(0,40);
   fill(s+50, j, 100,  s+100);
-  strokeWeight(20);
-  stroke(s, s-100);
-  //bezier(85, 20, 10, 10, 90, 90, 15, 80);
+  strokeWeight(1);
+  stroke(s+50, 100, j,  s+100, s-100);
+
 
   translate(width / 2, height / 2);
   beginShape();
@@ -55,13 +59,13 @@ j = random(0,40);
     var x = r * cos(i);
     var y = r * sin(i);
 
-
+//console.log(x,y);
     vertex(x, y);
   }
 
   endShape();
 
-//console.log(sizeOfBird);
+
 
   if (volhistory.length > 380) {
     volhistory.splice(0, 1);
