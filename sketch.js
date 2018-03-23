@@ -29,6 +29,7 @@ function setup() {
   background(50);
   button = createButton('pause/play');
   button.mousePressed(toggleSong);
+  button.position(20, 20);
   song.play();
   amp = new p5.Amplitude();
 }
@@ -41,7 +42,7 @@ function draw() {
         //background(255-s);
 
 
-j = random(30,50);
+j = random(0,40);
   fill(s+50, j, 100,  s+100);
   strokeWeight(20);
   stroke(s, s-100);
