@@ -27,7 +27,7 @@ function preload() {
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  sizeOfBird = windowWidth - 200;
+  sizeOfBird = min(windowWidth, windowHeight)-200; //choose the smaller side of the screen
   angleMode(DEGREES);
   background(50);
   button = createButton('pause/play');
