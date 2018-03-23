@@ -47,7 +47,7 @@ function draw() {
 
 
   j = random(0,40);
-  fill(s+50, j, 100,  s+100);
+  fill(s+50*n, j, 100,  s+100);
   strokeWeight(1);
   stroke(s+50, 100, j,  s+100, s-100);
 
@@ -60,7 +60,7 @@ function draw() {
     var y = r * sin(i);
 
 //console.log(x,y);
-    vertex(x, y);
+    curveVertex(x, y);
   }
 
   endShape();
