@@ -24,7 +24,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(600, 600);
+  createCanvas(windowWidth, windowHeight);
   angleMode(DEGREES);
   background(50);
   button = createButton('stop/play');
