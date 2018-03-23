@@ -26,6 +26,7 @@ function setup() {
   angleMode(DEGREES);
   background(50);
   button = createButton('toggle');
+  button.position(20, 20);
   button.mousePressed(toggleSong);
   song.play();
   amp = new p5.Amplitude();
