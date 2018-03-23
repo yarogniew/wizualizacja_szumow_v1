@@ -11,21 +11,22 @@ var volhistory = [];
 
 function toggleSong() {
   if (song.isPlaying()) {
-    song.pause();
+    song.stop();
+          background(50);
   } else {
     song.play();
   }
 }
 
 function preload() {
-  song = loadSound('szumy.mp3');
+  song = loadSound('Potrzeby.mp3');
 }
 
 function setup() {
   createCanvas(600, 600);
   angleMode(DEGREES);
   background(50);
-  button = createButton('toggle');
+  button = createButton('stop/play');
   button.mousePressed(toggleSong);
   song.play();
   amp = new p5.Amplitude();
@@ -39,9 +40,10 @@ function draw() {
         //background(255-s);
 
 
-      stroke(s);
-        fill(s+50);
-  strokeWeight(1);
+
+  fill(s+50, s+100);
+  strokeWeight(20);
+  stroke(s, s-100);
   //bezier(85, 20, 10, 10, 90, 90, 15, 80);
 
   translate(width / 2, height / 2);
