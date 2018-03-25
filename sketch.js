@@ -3,26 +3,27 @@
 // http://patreon.com/codingtrain
 // Code for: https://youtu.be/h_aTgOl9J5I
 
-var song;
+var songB;
 var amp;
 var button;
-var sizeOfBird = 400;
+var sizeOfSz;
 var volhistory = [];
 var j, n;
 var xoff = 0.05;
 
 
 function toggleSong() {
-  if (song.isPlaying()) {
-    song.pause();
+  if (songB.isPlaying()) {
+    songB.pause();
           background(50);
   } else {
-    song.play();
+    songB.play();
   }
 }
 
 function preload() {
-  song = loadSound('szumy.mp3');
+  //song = loadSound('szumy.mp3');
+  songB = loadSound('Potrzeby.mp3');
 }
 
 function setup() {
@@ -34,8 +35,9 @@ function setup() {
   button.mousePressed(toggleSong);
   button.position(20, 20);
   //button.size(200);
-  song.play();
+  songB.play();
   amp = new p5.Amplitude();
+  amp.setInput(songB);
 }
 
 function draw() {
