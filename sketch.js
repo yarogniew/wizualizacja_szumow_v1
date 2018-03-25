@@ -56,12 +56,12 @@ function draw() {
 
   translate(width / 2, height / 2);
   beginShape();
-  for (var i = 0; i < 380; i+=17) {
+  for (var i = 0; i < 380; i+=11) {
     var r = map(volhistory[i], 0, 1, 0, sizeOfBird*vol*7);
     var x = r * cos(i);
     var y = r * sin(i);
 
-//console.log(x,y);
+//console.log(i);
     curveVertex(x, y);
   }
 
@@ -69,8 +69,8 @@ function draw() {
 
 
 
-  if (volhistory.length > 360) {
-    volhistory.splice(0, 1);
+  if (volhistory.length > 380) {
+    volhistory.splice(0, 2);
 
   }
   //ellipse(100, 100, 200, vol * 200);
