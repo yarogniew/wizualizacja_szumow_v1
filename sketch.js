@@ -35,7 +35,10 @@ function setup() {
   shpSize = min(windowWidth, windowHeight)* 0.8; //choose the smaller side of the screen
   angleMode(DEGREES);
   background(50);
+
   button = createButton('pause/play');
+
+
   button.mousePressed(toggleSong);
   button.position(20, shpSize/20*2);
   //button.size(200);
