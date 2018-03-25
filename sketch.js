@@ -10,7 +10,7 @@ var sizeOfSz;
 var volhistory = [];
 var j, n;
 var xoff = 0.05;
-
+var result;
 
 function toggleSong() {
   if (songB.isPlaying()) {
@@ -24,6 +24,7 @@ function toggleSong() {
 function preload() {
   //song = loadSound('szumy.mp3');
   songB = loadSound('Potrzeby.mp3');
+  result = loadStrings('tekstpiosenki.txt');
 }
 
 function setup() {
@@ -38,6 +39,9 @@ function setup() {
   songB.play();
   amp = new p5.Amplitude();
   amp.setInput(songB);
+
+  //console.log(result.length);
+
 }
 
 function draw() {
@@ -53,7 +57,7 @@ function draw() {
   strokeWeight(1);
   stroke(s+50, 100, j,  s+100, s-100);
 
-
+  push();
   translate(width / 2, height / 2);
   beginShape();
   for (var i = 0; i < 380; i+=11) {
@@ -67,11 +71,15 @@ function draw() {
 
   endShape(CLOSE);
 
-
-
   if (volhistory.length > 380) {
     volhistory.splice(0, 2);
 
   }
+  pop();
+  noStroke();
+  textAlign(CENTER);
+  textSize(sizeOfBird/20);
+  fill(s+50*n, s+100*n);
+  text(result[0], width / 2, 50);
   //ellipse(100, 100, 200, vol * 200);
 }
