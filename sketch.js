@@ -24,6 +24,7 @@ function toggleSong() {
 
 function preload() {
   //song = loadSound('szumy.mp3');
+  myFont = loadFont('Sansation_Regular.ttf');
   songB = loadSound('Potrzeby.mp3');
   result = loadStrings('tekstpiosenki.txt');
 }
@@ -34,6 +35,8 @@ function setup() {
   shpSize = min(windowWidth, windowHeight)* 0.8; //choose the smaller side of the screen
   angleMode(DEGREES);
   background(50);
+
+  textFont(myFont);
 
   button = createButton('pause/play');
   button.mousePressed(toggleSong);
